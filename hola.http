@@ -1,0 +1,30 @@
+POST http://localhost:3000/api/transport/solve
+Content-Type: application/json
+
+{
+  "method": "northwest",
+  "costs": [[4, 8, 6], [5, 3, 7],[3,2,1]],
+  "supply": [30, 40,10], 
+  "demand": [20, 25, 35]
+}
+
+###
+POST http://localhost:3000/api/transport/solve
+Content-Type: application/json
+
+{
+  "method": "minimumCost",
+  "costs": [[40,21,22,26],[39,21,29,36],[12,24,20,18]],
+  "supply": [650,1100,950], 
+  "demand": [200,950,350,1200]
+}
+###
+POST http://localhost:3000/api/transport/solve
+Content-Type: application/json
+
+{
+  "method": "vogel",
+  "costs": [[23,24,15,23],[16,14,36,27],[10,19,26,28]],
+  "supply": [1600,450,350], 
+  "demand": [1500,250,350,300]
+}

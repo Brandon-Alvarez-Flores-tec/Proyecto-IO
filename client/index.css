@@ -1,0 +1,212 @@
+/* reset basico */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #eeeeee;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+a {
+    color: #1a3fa0;
+}
+
+a:hover {
+    color: #c00000;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, p, dl, dd {
+    margin: 0;
+}
+
+/* elementos que ya no se usan en este diseño (mejor borrarlos del html) */
+.brand-mark,
+.tag,
+.index,
+.meta,
+.count {
+    display: none;
+}
+
+/* header */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: #333333;
+    color: #ffffff;
+}
+
+.brand h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.brand-sub {
+    font-weight: normal;
+}
+
+.nav-list {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-list a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.nav-list a:hover {
+    color: #ffd24d;
+}
+
+.nav-list a[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* layout principal: aside + main */
+.layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+}
+
+/* aside */
+.panel-side {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #999999;
+}
+
+.block {
+    margin-bottom: 14px;
+}
+
+.block:last-child {
+    margin-bottom: 0;
+}
+
+.label {
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.lead {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.note {
+    font-style: italic;
+}
+
+.spec div {
+    margin-bottom: 3px;
+}
+
+.spec dt {
+    display: inline;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+}
+
+.spec dt::after {
+    content: ": ";
+}
+
+.spec dd {
+    display: inline;
+}
+
+/* main */
+.panel-main {
+    flex: 1;
+}
+
+.section-head {
+    margin-bottom: 12px;
+}
+
+.section-head h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* tarjetas de metodos */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card {
+    display: block;
+    width: 260px;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #999999;
+    color: #111111;
+    text-decoration: none;
+}
+
+.card:hover {
+    background: #f7f7f7;
+    color: #111111;
+}
+
+.card h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #1a3fa0;
+    text-decoration: underline;
+}
+
+.card p {
+    margin-bottom: 8px;
+}
+
+.go {
+    font-size: 13px;
+    color: #1a3fa0;
+    text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 760px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .panel-side,
+    .card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,223 @@
+
+
+{
+  "success": true,
+  "result": {
+    "method": "northwest",
+    "allocations": [
+      [
+        20,
+        10,
+        0
+      ],
+      [
+        0,
+        15,
+        25
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "totalCost": 390,
+    "steps": [
+      {
+        "step": 1,
+        "cell": [
+          0,
+          0
+        ],
+        "quantity": 20,
+        "unitCost": 4,
+        "stepCost": 80,
+        "accumulatedCost": 80,
+        "remainingSupply": [
+          10,
+          40,
+          10
+        ],
+        "remainingDemand": [
+          0,
+          25,
+          35
+        ],
+        "allocations": [
+          [
+            20,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "description": "Paso 1: en la celda (0, 0) se asignan 20 unidades a costo 4 = 80. Se cubrió la demanda: avanza a la siguiente columna."
+      },
+      {
+        "step": 2,
+        "cell": [
+          0,
+          1
+        ],
+        "quantity": 10,
+        "unitCost": 8,
+        "stepCost": 80,
+        "accumulatedCost": 160,
+        "remainingSupply": [
+          0,
+          40,
+          10
+        ],
+        "remainingDemand": [
+          0,
+          15,
+          35
+        ],
+        "allocations": [
+          [
+            20,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "description": "Paso 2: en la celda (0, 1) se asignan 10 unidades a costo 8 = 80. Se agotó la oferta: avanza a la siguiente fila."
+      },
+      {
+        "step": 3,
+        "cell": [
+          1,
+          1
+        ],
+        "quantity": 15,
+        "unitCost": 3,
+        "stepCost": 45,
+        "accumulatedCost": 205,
+        "remainingSupply": [
+          0,
+          25,
+          10
+        ],
+        "remainingDemand": [
+          0,
+          0,
+          35
+        ],
+        "allocations": [
+          [
+            20,
+            10,
+            0
+          ],
+          [
+            0,
+            15,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "description": "Paso 3: en la celda (1, 1) se asignan 15 unidades a costo 3 = 45. Se cubrió la demanda: avanza a la siguiente columna."
+      },
+      {
+        "step": 4,
+        "cell": [
+          1,
+          2
+        ],
+        "quantity": 25,
+        "unitCost": 7,
+        "stepCost": 175,
+        "accumulatedCost": 380,
+        "remainingSupply": [
+          0,
+          0,
+          10
+        ],
+        "remainingDemand": [
+          0,
+          0,
+          10
+        ],
+        "allocations": [
+          [
+            20,
+            10,
+            0
+          ],
+          [
+            0,
+            15,
+            25
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "description": "Paso 4: en la celda (1, 2) se asignan 25 unidades a costo 7 = 175. Se agotó la oferta: avanza a la siguiente fila."
+      },
+      {
+        "step": 5,
+        "cell": [
+          2,
+          2
+        ],
+        "quantity": 10,
+        "unitCost": 1,
+        "stepCost": 10,
+        "accumulatedCost": 390,
+        "remainingSupply": [
+          0,
+          0,
+          0
+        ],
+        "remainingDemand": [
+          0,
+          0,
+          0
+        ],
+        "allocations": [
+          [
+            20,
+            10,
+            0
+          ],
+          [
+            0,
+            15,
+            25
+          ],
+          [
+            0,
+            0,
+            10
+          ]
+        ],
+        "description": "Paso 5: en la celda (2, 2) se asignan 10 unidades a costo 1 = 10. Se agotaron la oferta y la demanda: avanza a la siguiente fila."
+      }
+    ]
+  }
+}
