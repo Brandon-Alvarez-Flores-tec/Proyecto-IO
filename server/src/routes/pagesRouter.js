@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.use(express.static(path.join(import.meta.dirname, '../../../client/')));
 console.log(import.meta.dirname);
-router.get("/home",(req,res) => {
+router.get("/",(req,res) => {
     res.sendFile(path.join(import.meta.dirname, "../../../client/home.html"));
 })
 router.get("/methodSolver",(req,res) => {

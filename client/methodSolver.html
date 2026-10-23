@@ -7,6 +7,7 @@
         <meta name="description" content="Resolutor de problemas de transporte: esquina noroeste, costo mínimo y Vogel, paso a paso.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./matrix.css">
     </head>
     <body>
         <header class="topbar">
@@ -16,102 +17,74 @@
             </div>
             <nav aria-label="Principal">
                 <ul class="nav-list">
-                    <li><a href="index.html" aria-current="page">Inicio</a></li>
-                    <li><a href="northwest.html">Esquina noroeste</a></li>
-                    <li><a href="minimumcost.html">Costo mínimo</a></li>
-                    <li><a href="vogel.html">Vogel</a></li>
+                    <li><a href="/" aria-current="page">Inicio</a></li>
+                    <li><a href="/methodSolver">Esquina noroeste</a></li>
+                    <li><a href="/methodSolver">Costo mínimo</a></li>
+                    <li><a href="/methodSolver">Vogel</a></li>
                 </ul>
             </nav>
         </header>
 
         <div class="layout">
-            <aside class="panel-side">
-                <section class="block">
-                    <h2 class="label">Proyecto</h2>
-                    <p class="lead">Resolutor de ejercicios de transporte con método paso a paso.</p>
-                    <p>
-                        Dada una matriz de costos, una oferta por origen y una demanda por destino,
-                        encuentra una solución básica inicial y muestra cada asignación hasta llegar al costo total.
-                    </p>
-                </section>
-
-                <section class="block">
-                    <h2 class="label">Entradas</h2>
-                    <dl class="spec">
-                        <div><dt>costs</dt><dd>matriz de costos unitarios</dd></div>
-                        <div><dt>supply</dt><dd>oferta de cada fila</dd></div>
-                        <div><dt>demand</dt><dd>demanda de cada columna</dd></div>
-                    </dl>
-                </section>
-
-                <section class="block">
-                    <h2 class="label">Salida</h2>
-                    <dl class="spec">
-                        <div><dt>allocations</dt><dd>matriz de asignaciones</dd></div>
-                        <div><dt>totalCost</dt><dd>costo total de la solución</dd></div>
-                        <div><dt>steps</dt><dd>detalle de cada paso</dd></div>
-                    </dl>
-                </section>
-
-                <section class="block">
-                    <h2 class="label">Condición</h2>
-                    <p class="note">La oferta total debe ser igual a la demanda total.</p>
-                </section>
-            </aside>
-
             <main class="panel-main">
                 <div class="section-head">
-                    <h2>Métodos disponibles</h2>
+                    <h2>Resolvedor de método de transporte</h2>
                     <span class="count">03</span>
+                </div>
+                <div class="section-head">
+                    <h3>Opciones</h3>
+                    <div class="option-div">
+                        <label>Filas</label>
+                        <input class="inputCheckAlwaysChanges" type="number" name="" id="rowInput">
+                    </div>
+                    <div class="option-div">
+                        <label>Columnas</label>
+                        <input class="inputCheckAlwaysChanges" type="number" name="" id="colInput">
+                    </div>
                 </div>
 
                 <div class="cards">
-                    <a class="card" href="northwest.html">
-                        <div class="card-top">
-                            <span class="index">01</span>
-                            <span class="tag">método</span>
-                        </div>
-                        <h3>Esquina noroeste</h3>
-                        <p>Empieza en la celda superior izquierda y avanza por filas o columnas según se agote la oferta o la demanda.</p>
-                        <dl class="meta">
-                            <div><dt>criterio</dt><dd>posición</dd></div>
-                            <div><dt>velocidad</dt><dd>alta</dd></div>
-                            <div><dt>calidad</dt><dd>baja</dd></div>
-                        </dl>
-                        <span class="go">abrir ejercicio →</span>
-                    </a>
 
-                    <a class="card" href="minimumcost.html">
-                        <div class="card-top">
-                            <span class="index">02</span>
-                            <span class="tag">método</span>
-                        </div>
-                        <h3>Costo mínimo</h3>
-                        <p>Asigna siempre en la celda de menor costo disponible, cerrando la fila o columna que se agote.</p>
-                        <dl class="meta">
-                            <div><dt>criterio</dt><dd>menor costo</dd></div>
-                            <div><dt>velocidad</dt><dd>media</dd></div>
-                            <div><dt>calidad</dt><dd>media</dd></div>
-                        </dl>
-                        <span class="go">abrir ejercicio →</span>
-                    </a>
+                </div>
 
-                    <a class="card" href="vogel.html">
-                        <div class="card-top">
-                            <span class="index">03</span>
-                            <span class="tag">método</span>
+                <div class="matrix" id="matrix">
+                    <!-- <div class="box-row">
+                        <div class="box">
+                            <div><p>X</p></div>
                         </div>
-                        <h3>Vogel</h3>
-                        <p>Calcula penalizaciones por fila y columna, elige la más alta y asigna en su celda de menor costo.</p>
-                        <dl class="meta">
-                            <div><dt>criterio</dt><dd>penalización</dd></div>
-                            <div><dt>velocidad</dt><dd>baja</dd></div>
-                            <div><dt>calidad</dt><dd>alta</dd></div>
-                        </dl>
-                        <span class="go">abrir ejercicio →</span>
-                    </a>
+                    </div> -->
+                    
+
+
+                </div>
+                <select id="method-select">
+                    <option>northwest</option>
+                    <option>minimumCost</option>
+                    <option>vogel</option>
+                </select>
+                <input type="button" value="Ver resultado" id="btn-results">
+
+                <div class="matrix-results">
+                    <div class="matrix" id="matrix-results">
+
+                    </div>
+                    <div class="matrix-description-step__div">
+                        <p class="method-p">Método: </p>
+                        <p class="totalCost-p">Costo total: </p>
+                        <p class="description-p">Descripción: </p>
+                    </div>
+                    <div class="step-btns">
+                        <p class="step-p">Paso: X</p>
+                        <input type="button" value="<" id="btn-left">
+                        <input type="button" value=">" id="btn-right">
+                    </div>
+
                 </div>
             </main>
+
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="main.js"></script>
+        <script src="showResults.js"></script>
     </body>
 </html>

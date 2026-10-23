@@ -189,6 +189,16 @@ h1, h2, h3, p, dl, dd {
     text-decoration: underline;
 }
 
+.matrix{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box-row{
+    display: flex;
+    gap:5px;
+}
+
 /* responsive */
 @media (max-width: 760px) {
     .topbar {

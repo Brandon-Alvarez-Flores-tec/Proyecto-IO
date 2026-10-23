@@ -21,9 +21,9 @@ app.use(cookieParser());
 
 //Routes
 // Asegúrate de exponer la carpeta donde realmente viven tus archivos compilados o estáticos
-
+app.use("/", pagesRouter);
 app.use("/api", transportRouter);
-app.use("/api/transport", pagesRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Servidor inciado ruta principal: http://localhost:${PORT}/`);

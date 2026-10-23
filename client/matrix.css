@@ -1,0 +1,140 @@
+/* evita que la matriz estire la pagina, asi el scroll queda dentro de ella */
+.panel-main {
+    min-width: 0;
+}
+
+/* matriz de transporte */
+.matrix {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 12px 0;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #999999;
+    overflow-x: auto; /* si la matriz es larga, hace scroll horizontal */
+}
+
+.box-row {
+    display: flex;
+    gap: 5px;
+    width: max-content; /* la fila no se encoge, el scroll lo maneja .matrix */
+}
+
+/* cuadro base */
+.box {
+    position: relative;
+    flex-shrink: 0;
+    width: 90px;
+    height: 70px;
+    background: #ffffff;
+    border: 1px solid #999999;
+}
+
+.box-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* la X queda al centro, aqui se mostrara la asignacion */
+.box-div p {
+    font-size: 20px;
+    color: #999999;
+}
+
+/* el costo va en la esquina superior derecha */
+.box-div > div:first-of-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box-cost-input {
+    display: block;
+    width: 44px;
+    height: 24px;
+    padding: 0 4px;
+    background: #f3f3f3;
+    border: 0;
+    border-left: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    text-align: right;
+}
+
+/* oferta y demanda: mismo cuadro pero gris, con etiqueta arriba */
+.box-supply,
+.box-demand {
+    height: 70px;
+    background: #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-supply {
+    margin-left: 10px; /* separa la columna de oferta de los costos */
+}
+
+.box-supply::before,
+.box-demand::before {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    font-size: 11px;
+    color: #555555;
+}
+
+.box-supply::before {
+    content: "oferta";
+}
+
+.box-demand::before {
+    content: "demanda";
+}
+
+.box-supply-input,
+.box-demand-input {
+    width: 100%;
+    height: 100%;
+    padding: 14px 6px 0;
+    background: transparent;
+    border: 0;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.box-demand {
+    margin-top: 5px; /* separa la fila de demanda de los costos */
+}
+
+.matrix input:focus {
+    outline: 2px solid #1a3fa0;
+    outline-offset: -2px;
+}
+
+/* celulares: cuadros mas chicos */
+@media (max-width: 760px) {
+    .box {
+        width: 72px;
+        height: 60px;
+    }
+
+    .box-cost-input {
+        width: 38px;
+        height: 22px;
+        font-size: 12px;
+    }
+
+    .box-supply-input,
+    .box-demand-input {
+        font-size: 14px;
+    }
+}
